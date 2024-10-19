@@ -1,7 +1,7 @@
 import { Button, Card, Container } from "react-bootstrap";
 
  export const ButtonLocal = (() => {
-    window.location.href = 'http://localhost:3000';
+    window.location.href = 'http://localhost:3001';
 
     return (
         <Container>

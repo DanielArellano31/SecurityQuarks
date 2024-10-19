@@ -55,14 +55,14 @@ export const HackForm = () => {
     };
 
     return (
-        <Container>
-            <Card>
-                <Card.Body>
-                    <Card.Title className="text-center">Reporte de Atentado</Card.Title>
+        <Container >
+            <Card className='mt-5 text-center bg-warning shadow'>
+                <Card.Body >
+                    <Card.Title className="text-center ">Reporte de Atentado</Card.Title>
                 </Card.Body>
-            </Card>
+            </Card> 
 
-            <Card className="mt-3">
+            <Card className="mt-3 shadow card border-warning ">
                 <Card.Body>
                     <Form onSubmit={onSubmit}>
                         <Form.Group className="mb-3">
@@ -113,23 +113,23 @@ export const HackTable = () => {
     const data = location.state;
 
     return (
-        <Container>
-            <Card>
-                <Card.Body>
+        <Container >
+            <Card className='bg-warning shadow'>
+                <Card.Body  >
                     <Card.Title className="text-center">Respuestas Registradas</Card.Title>
                 </Card.Body>
             </Card>
 
-            <Table striped bordered hover className="mt-3">
+            <Table striped bordered hover className= "text-center mt-3 mb-4 table border-warning">
                 <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Pregunta</th>
-                        <th>Respuesta del civil</th>
+                    <tr style={{ cursor: 'pointer', transition: 'background-color 0.3s' }}>
+                        <th className='bg-warning'>#</th>
+                        <th className='bg-warning'>Pregunta</th>
+                        <th className='bg-warning'>Respuesta del civil</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                    <tr style={{ cursor: 'pointer', transition: 'background-color 0.3s' }}>
                         <td>1.</td>
                         <td>Nombre Completo</td>
                         <td>{data.Q1}</td>
@@ -139,7 +139,7 @@ export const HackTable = () => {
                         <td>Edad</td>
                         <td>{data.Q2}</td>
                     </tr>
-                    <tr>
+                    <tr style={{ cursor: 'pointer', transition: 'background-color 0.3s' }}>
                         <td>3.</td>
                         <td>¿Cómo ocurrieron los hechos?</td>
                         <td>{data.Q3}</td>
@@ -149,19 +149,19 @@ export const HackTable = () => {
                         <td>¿Cuándo ocurrieron los hechos?</td>
                         <td>{data.Q4}</td>
                     </tr>
-                    <tr>
+                    <tr style={{ cursor: 'pointer', transition: 'background-color 0.3s' }}>
                         <td>5.</td>
                         <td>¿Qué pertenencias fueron despojadas?</td>
                         <td>{data.Q5}</td>
                     </tr>
-                    <tr>
+                    <tr style={{ cursor: 'pointer', transition: 'background-color 0.3s' }}>
                         <td>6.</td>
                         <td>¿Hubo armas?</td>
                         <td>{data.Q6}</td>
                     </tr>
                 </tbody>
             </Table>
-            <Button onClick={ButtonLocal}  variant="Primary" type="Warning" size="xl"></Button>
+            <Card> <Button onClick={ButtonLocal}  variant="Primary"  size="large"></Button> Mapeo</Card>
         </Container>
     );
 };
