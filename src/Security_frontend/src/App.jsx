@@ -1,31 +1,35 @@
-import { useState } from 'react';
-import { Security_backend } from 'declarations/Security_backend';
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HackForm, HackTable } from './HackForm'; // Importa ambos componentes
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-function App() {
-  const [greeting, setGreeting] = useState('');
 
-  function handleSubmit(event) {
-    event.preventDefault();
-    const name = event.target.elements.name.value;
-    Security_backend.greet(name).then((greeting) => {
-      setGreeting(greeting);
-    });
-    return false;
-  }
+
+export const HackContext = React.createContext();
+
+const App = () => {
+  const [formData, setFormData] = useState({
+    Q1: "",
+    Q2: "",
+    Q3: "",
+    Q4: "",
+    Q5: "",
+    Q6: ""
+  });
 
   return (
-    <main>
-      <img src="/logo2.svg" alt="DFINITY logo" />
-      <br />
-      <br />
-      <form action="#" onSubmit={handleSubmit}>
-        <label htmlFor="name">Enter your name: &nbsp;</label>
-        <input id="name" alt="Name" type="text" />
-        <button type="submit">Click Me!</button>
-      </form>
-      <section id="greeting">{greeting}</section>
-    </main>
+    <HackContext.Provider value={{ formData, setFormData }}>
+      <Router>
+        <Routes>
+          <Route path="/" element={<HackForm />} /> {/* Página de formulario */}
+          <Route path="/table" element={<HackTable />} /> {/* Página de tabla */}
+         
+        </Routes>
+      </Router>
+    </HackContext.Provider>
   );
-}
+};
 
-export default App;
+export default App;
+
+App
