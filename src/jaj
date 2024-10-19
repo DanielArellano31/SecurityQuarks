@@ -1,0 +1,46 @@
+import React from 'react';
+import { MapContainer, TileLayer, Polygon } from 'react-leaflet';
+import 'leaflet/dist/leaflet.css';
+
+const polygon = [
+  [21.90568392332854, -102.30666410473273],
+  [21.908101547505716, -102.30130849790628  ],
+  [21.904639108225545, -102.30490945604143]
+];
+const polygon1= [
+  [ 21.9329380    , -102.25874], 
+  [21.932530366968308, -102.26125503650343  ],
+  [21.932926062949775,-102.2541067691264],
+
+];
+const polygon2= [
+  [ 21.857995078290415, -102.31208331894268], 
+  [21.854071985118352,-102.30868369171205],
+  [21.854,-102.316],
+
+];
+const polygon3= [
+  
+  [21.8432248955758, -102.30724813902738  ],
+  [21.8428529478807    ,-102.30218747563151],
+  [21.845054155010573   ,-102.30418892589094],
+
+];
+
+
+const MapComponent = () => {
+  return (
+    <MapContainer center={[40.7128, -74.0060]} zoom={13} style={{ height: '800px', width: '200%' }}>
+      <TileLayer
+        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      />
+      <Polygon fillColor='red' color='red' positions={polygon} />
+      <Polygon fillColor='red' color='red' positions={polygon1} />
+      <Polygon fillColor='red' color='red' positions={polygon2} />
+      <Polygon fillColor='red' color='red' positions={polygon3} />
+    </MapContainer>
+  );
+};
+
+export default MapComponent;
